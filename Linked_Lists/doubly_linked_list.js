@@ -100,6 +100,7 @@ const myLinkedList = new LinkedList(10);
 console.log(myLinkedList.append(15));
 console.log(myLinkedList.append(5));
 console.log(myLinkedList.prepend(1));
-console.log(myLinkedList.insert(1,99))
+myLinkedList.append(3);
+console.log(myLinkedList.insert(1, 99));
 // console.log(myLinkedList.remove(2));
 console.log(myLinkedList.printList());
