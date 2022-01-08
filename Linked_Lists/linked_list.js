@@ -64,12 +64,12 @@ class LinkedList {
       next: null,
     };
 
-    const leader = this.traverseToIndex(index - 1);     //[2,4,5,6]
-    const holdingPointer = leader.next
-    leader.next = newNode
-    newNode.next = holdingPointer
-    this.length++
-    return this.printList()
+    const leader = this.traverseToIndex(index - 1); //[2,4,5,6]
+    const holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+    return this.printList();
   }
   traverseToIndex(index) {
     let counter = 0;
@@ -78,22 +78,43 @@ class LinkedList {
       currentNode = currentNode.next;
       counter++;
     }
-    return currentNode
+    return currentNode;
   }
 
-  remove(index){
-    const leader = this.traverseToIndex(index-1)
-    const unwantedNode=leader.next
-    leader.next=unwantedNode.next
-    this.length--
-    return this.printList()
+  remove(index) {
+    const leader = this.traverseToIndex(index - 1);
+    const unwantedNode = leader.next;
+    leader.next = unwantedNode.next;
+    this.length--;
+    return this.printList();
+  }
+
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+
+    while (second) {
+      const third = second.next;
+      second.next = first;
+      first = second;
+      second = third;
+    }
+
+    this.head.next = null;
+    this.head = first;
+    return this;
   }
 }
 const myLinkedList = new LinkedList(10);
 // console.log(myLinkedList);
 // console.log(myLinkedList.append(5));
 console.log(myLinkedList.append(15));
-console.log(myLinkedList.prepend(1));
+console.log(myLinkedList.append(1));
 // console.log(myLinkedList.insert(2,99))
-console.log(myLinkedList.remove(2))
-// console.log(myLinkedList.printList());
+// console.log(myLinkedList.remove(2));
+console.log(myLinkedList.reverse());
+console.log(myLinkedList.printList());
