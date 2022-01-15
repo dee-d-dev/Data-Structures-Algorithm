@@ -40,7 +40,25 @@ class BinarySearchTree {
 
   remove() {}
 
-  lookUp() {}
+  lookUp(value) {
+    if (!this.root) {
+      return false;
+    }
+
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value < currentNode.value) {
+        //left
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        //right
+        currentNode = currentNode.right;
+      } else if (currentNode.value == value) {
+        return currentNode;
+      }
+    }
+    return false;
+  }
 }
 
 const BST = new BinarySearchTree();
@@ -49,7 +67,8 @@ BST.insert(3);
 BST.insert(8);
 BST.insert(4);
 BST.insert(6);
-console.log(BST.insert(9));
+BST.insert(9);
+console.log(BST.lookUp(85));
 
 //     5
 // 3      8
