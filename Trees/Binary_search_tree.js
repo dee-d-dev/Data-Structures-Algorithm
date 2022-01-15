@@ -38,7 +38,41 @@ class BinarySearchTree {
     }
   }
 
-  remove() {}
+  remove(value) {
+    if (!this.root) {
+      return false;
+    }
+
+    currentNode = this.root;
+    parentNode = null;
+
+    while (true) {
+      if (value < currentNode.value) {
+        //left
+        parentNode = currentNode;
+        currentNode = currentNode.left;
+      } else if (value > currentNode) {
+        parentNode = currentNode;
+        currentNode = currentNode.right;
+      } else if (value === currentNode) {
+        //get to work here
+
+        //option 1: if there's no right child
+        if (currentNode.right == null) {
+          if ((parentNode = null)) {
+            this.root = currentNode.left;
+          } else {
+            //if parent > current value,current value is going to be a left node of the parent
+            if (currentNode.value < parentNode.value) {
+              parentNode.left = currentNode.left;
+            } else if (currentNode.value > parentNode.value) {
+              parentNode.right = currentNode.left;
+            }
+          }
+        }
+      }
+    }
+  }
 
   lookUp(value) {
     if (!this.root) {
