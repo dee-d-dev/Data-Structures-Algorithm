@@ -46,7 +46,7 @@ class BinarySearchTree {
     currentNode = this.root;
     parentNode = null;
 
-    while (true) {
+    while (currentNode) {
       if (value < currentNode.value) {
         //left
         parentNode = currentNode;
@@ -68,6 +68,14 @@ class BinarySearchTree {
             } else if (currentNode.value > parentNode.value) {
               parentNode.right = currentNode.left;
             }
+          }
+        } else if (currentNode.right.left == null) {
+          if (parentNode == null) {
+            this.root = currentNode.left;
+          } else {
+            currentNode.right.left = currentNode.left;
+
+            //if parent > current, make right child of the left the parent
           }
         }
       }
@@ -101,8 +109,10 @@ BST.insert(3);
 BST.insert(8);
 BST.insert(4);
 BST.insert(6);
+BST.insert(2);
 BST.insert(9);
-console.log(BST.lookUp(85));
+BST.remove(9);
+console.log(BST.lookUp(6));
 
 //     5
 // 3      8
