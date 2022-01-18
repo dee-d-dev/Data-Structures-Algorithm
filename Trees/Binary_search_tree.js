@@ -38,58 +38,58 @@ class BinarySearchTree {
     }
   }
 
-  remove(value) {
-    if (!this.root) {
-      return false;
-    }
+  // remove(value) {
+  //   if (!this.root) {
+  //     return false;
+  //   }
 
-    currentNode = this.root;
-    parentNode = null;
+  //   currentNode = this.root;
+  //   parentNode = null;
 
-    while (currentNode) {
-      if (value < currentNode.value) {
-        //left
-        parentNode = currentNode;
-        currentNode = currentNode.left;
-      } else if (value > currentNode) {
-        parentNode = currentNode;
-        currentNode = currentNode.right;
-      } else if (value === currentNode) {
-        //get to work here
+  //   while (currentNode) {
+  //     if (value < currentNode.value) {
+  //       //left
+  //       parentNode = currentNode;
+  //       currentNode = currentNode.left;
+  //     } else if (value > currentNode) {
+  //       parentNode = currentNode;
+  //       currentNode = currentNode.right;
+  //     } else if (value === currentNode) {
+  //       //get to work here
 
-        //option 1: if there's no right child
-        if (currentNode.right == null) {
-          if ((parentNode = null)) {
-            this.root = currentNode.left;
-          } else {
-            //if parent > current value,current value is going to be a left node of the parent
-            if (currentNode.value < parentNode.value) {
-              parentNode.left = currentNode.left;
-            } else if (currentNode.value > parentNode.value) {
-              parentNode.right = currentNode.left;
-            }
-          }
-        } else if (currentNode.right.left == null) {
-          if (parentNode == null) {
-            this.root = currentNode.left;
-          } else {
-            currentNode.right.left = currentNode.left;
+  //       //option 1: if there's no right child
+  //       if (currentNode.right == null) {
+  //         if ((parentNode = null)) {
+  //           this.root = currentNode.left;
+  //         } else {
+  //           //if parent > current value,current value is going to be a left node of the parent
+  //           if (currentNode.value < parentNode.value) {
+  //             parentNode.left = currentNode.left;
+  //           } else if (currentNode.value > parentNode.value) {
+  //             parentNode.right = currentNode.left;
+  //           }
+  //         }
+  //       } else if (currentNode.right.left == null) {
+  //         if (parentNode == null) {
+  //           this.root = currentNode.left;
+  //         } else {
+  //           currentNode.right.left = currentNode.left;
 
-            //if parent > current, make right child of the left the parent
-            if (currentNode.value > parentNode.value) {
-              parentNode.left = currentNode.right;
+  //           //if parent > current, make right child of the left the parent
+  //           if (currentNode.value > parentNode.value) {
+  //             parentNode.left = currentNode.right;
 
-              //if parent is < current, make the right child a right child of the parent
-            } else if (currentNode.value > parentNode.value) {
-              parentNode.right = currentNode.right;
-            } else if(currentNode.right.left === null){
+  //             //if parent is < current, make the right child a right child of the parent
+  //           } else if (currentNode.value > parentNode.value) {
+  //             parentNode.right = currentNode.right;
+  //           } else if(currentNode.right.left === null){
               
-            }
-          } 
-        }
-      }
-    }
-  }
+  //           }
+  //         } 
+  //       }
+  //     }
+  //   }
+  // }
 
   lookUp(value) {
     if (!this.root) {
@@ -120,7 +120,7 @@ BST.insert(4);
 BST.insert(6);
 BST.insert(2);
 BST.insert(9);
-BST.remove(9);
+// BST.remove(9);
 console.log(BST.lookUp(6));
 
 //     5
