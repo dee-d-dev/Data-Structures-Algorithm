@@ -9,3 +9,16 @@ function Recursion() {
 }
 
 Recursion();
+
+// function reverseString(str) {
+//   let reverseStr = str.split("").length - 1;
+//   let rString = [];
+
+//   for (i = reverseStr; i >= 0; i--)
+//     if (str.length > 1) {
+//       rString.push(str[i]);
+//     }
+//   return rString.join("");
+// }
+
+// reverseString("boy");
