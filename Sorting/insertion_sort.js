@@ -16,6 +16,6 @@ const numbers = [7, 2, 9, 6, 5, 1, 3, 8, 4];
 //   return array;
 // }
 
-//STILL WRAPPIG MY LIGHT IS ALWAYS 
+//STILL WRAPPING MY HEAD AROUND IT
 
 insertionSort([7, 2, 9, 6, 5, 1, 3, 8, 4]);
