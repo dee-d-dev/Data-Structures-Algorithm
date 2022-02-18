@@ -130,6 +130,50 @@ class BinarySearchTree {
     console.log(list);
     return list;
   }
+
+  DFSInOrder() {
+    return traverseInOrder(this.root, []);
+  }
+  DFSPreOrder() {
+    return traversePreOrder(this.root, []);
+  }
+  DFSPostOrder() {
+    return traversePostOrder(this.root, []);
+  }
+}
+
+function traverseInOrder(node, list) {
+  if (node.left) {
+    traverseInOrder(node.left, list);
+  }
+  list.push(node.value);
+  if (node.right) {
+    traverseInOrder(node.right, list);
+  }
+  console.log(list);
+  return list;
+}
+function traversePreOrder(node, list) {
+  list.push(node.value);
+  if (node.left) {
+    traversePreOrder(node.left, list);
+  }
+  if (node.right) {
+    traversePreOrder(node.right, list);
+  }
+  console.log(list);
+  return list;
+}
+function traversePostOrder(node, list) {
+  if (node.left) {
+    traversePostOrder(node.left, list);
+  }
+  if (node.right) {
+    traversePostOrder(node.right, list);
+  }
+  list.push(node.value);
+  console.log(list);
+  return list;
 }
 
 const BST = new BinarySearchTree();
@@ -140,10 +184,14 @@ BST.insert(4);
 BST.insert(6);
 BST.insert(2);
 BST.insert(9);
+
 // BST.remove(9);
 // console.log(BST.lookUp(6));
-BST.breadthFirstSearch();
+// BST.breadthFirstSearch();
+// BST.DFSInOrder();
+// BST.DFSPreOrder();
+// BST.DFSPostOrder();
 
 //     5
-// 3      8
-//2  4  6    9
+//  3      8
+//2   4  6   9
