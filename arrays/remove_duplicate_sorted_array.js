@@ -15,11 +15,25 @@
 // };
 
 let removeDuplicates = function (nums) {
-  for (let i = 0; i < nums.length; i++) {
-    nums.splice(i, nums.lastIndexOf(nums[i]) - i);
+  // for (let i = 0; i < nums.length; i++) {
+  //   nums.splice(i, nums.lastIndexOf(nums[i]) - i);
+  // }
+
+  // console.log(nums.length);
+  //[1,1,2] [1,2,2]
+  let low = 1;//2
+  let high = 1; //3
+  let len = nums.length;
+
+  while (high < len) {
+    if (nums[high] !== nums[high - 1]) {
+      nums[low] = nums[high];
+      low++;
+    }
+    high++;
   }
 
-  console.log(nums.length);
+  console.log(low);
 };
 
 removeDuplicates([1, 1, 2]);

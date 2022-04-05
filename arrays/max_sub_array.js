@@ -23,4 +23,4 @@ const maxSubArray = (nums) => {
   console.log(num);
 };
 
-maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]);
+maxSubArray([3, 4, 1, 2, 7, 5, 2]);
