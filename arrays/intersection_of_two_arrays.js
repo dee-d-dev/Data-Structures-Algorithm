@@ -14,10 +14,12 @@ const intersect = function (nums1, nums2) {
       nums2.splice(num2Idx, 1);
 
       final.push(num);
+     
     }
   });
+
 
  console.log(final);
 };
 
-intersect([1, 2, 2, 1], [2, 2]);
+intersect([4,9,5], [9,4,9,8,4]);
