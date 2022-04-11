@@ -13,4 +13,5 @@ function singleN(nums) {
   }
 }
 
-singleN([4, 1, 2, 1, 2]);
+// singleN([4, 1, 2, 1, 2]);
+
