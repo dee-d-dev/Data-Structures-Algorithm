@@ -27,7 +27,8 @@ var rotate = function (nums, k) {
   if (k === 0) {
     return nums;
   }
-  nums.unshift(...nums.slice(-k));
+  nums.unshift(...  nums.slice(-k));
+  console.log(nums)
   nums.splice(-k);
   console.log(nums);
 };
