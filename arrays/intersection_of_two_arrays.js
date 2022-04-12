@@ -7,6 +7,8 @@
 
 const intersect = function (nums1, nums2) {
   let final = [];
+  let len1 = nums1.length
+  let len2 = nums2.length
 
   nums1.forEach((num) => {
     if (nums2.includes(num)) {
@@ -17,6 +19,14 @@ const intersect = function (nums1, nums2) {
      
     }
   });
+
+  // for(i=0; i<len1; i++){
+  //   for(j=0; j<len2; j++){
+  //     if(nums1[i] == nums2[j]){
+  //       final.push(nums1[i])
+  //     }
+  //   }
+  // }
 
 
  console.log(final);
