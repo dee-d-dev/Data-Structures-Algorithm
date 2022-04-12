@@ -1,8 +1,8 @@
 let arr = [1, 2, 3, 4, 5, 6, 7,8,9];
-let mySet =new Set(arr);
+let mySet =new Set("adedotunadedigba");
 let myMap = new Map()
 
-myMap.set('ade', 2000)
+myMap.set('adedotun')
 
 console.log(arr);
-console.log(myMap);
+console.log(mySet);
