@@ -31,6 +31,15 @@ var rotate = function (nums, k) {
   console.log(nums)
   nums.splice(-k);
   console.log(nums);
+
+  //   let i = 0
+
+  // while(i < k){
+  //   nums.unshift(nums.pop())
+  //   i++
+  // }
+
+  // return nums
 };
 
 // nums = [1, 2, 3, 4, 5, 6, 7];
