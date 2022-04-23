@@ -9,12 +9,22 @@ Output: 321
 */ 
 
 let reverse = function (x) {
-  const length = Math.abs(x).toString().length;
-  let ans = 0;
-  for (let i = 0; i < length; i++) {
-    ans += (~~(x / 10 ** i) % 10) * 10 ** (length - 1 - i);
+  let negative = x < 0;
+  let reversed = 0;
+  if (negative) {
+    x *= 1;
   }
-  return Math.abs(ans) > 2 ** 31 ? 0 : ans;
+
+  while (x > 0) {
+    reversed = reversed * 10 + (x % 10);
+    x = Math.floor(x / 10);
+  }
+
+  if (reversed > 2 ** 31 - 1) {
+    return 0;
+  }
+
+  return negative ? reversed * -1 : reversed;
 };
 
 
