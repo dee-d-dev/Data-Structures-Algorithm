@@ -14,6 +14,7 @@ function checkCharacter(array) {
 } //the big 'O' notation for this is 0(n^2)
 
 //here I am using hash tables for better implementation
+//Using Map
 function checkCharacter2(array) {
   let map = {};
   for (let i = 0; i < array.length; i++) {
@@ -22,7 +23,7 @@ function checkCharacter2(array) {
     } else {
       map[array[i]] = i;
     }
-    // console.log(map)
+    console.log(map)
   }
 }
 checkCharacter2([2, 4, 2, 6, 1, 8]);
