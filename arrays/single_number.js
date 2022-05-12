@@ -1,7 +1,7 @@
 function singleN(nums) {
-  let right = 0;
+  // let right = 0;
 
-  let len = nums.length;
+  // let len = nums.length;
   //   while (right < len) {
   //     nums.sort();
   //     console.log(nums);
@@ -12,15 +12,29 @@ function singleN(nums) {
   //     console.log(right)
   //   }
 
-  nums.sort()
-      console.log(nums);
+  // nums.sort()
+  //     console.log(nums);
 
-  for (i = 0; i < len; i++) {
-    if (nums[i] != nums[i + 1]) {
-      console.log(nums[i]);
+  // for (i = 0; i < len; i++) {
+  //   if (nums[i] != nums[i + 1]) {
+  //     console.log(nums[i]);
+  //   }
+  //   i++;
+  // }
+
+  //Using Set
+  let numbers = new Set()
+    
+  for(num of nums){
+    if(numbers.has(num)){
+      numbers.delete(num)
+    }else{
+      numbers.add(num)
     }
-    i++;
   }
-}
+    
+  console.log(Array.from(numbers)[0]);
+};
+
 
 singleN([4, 1, 2, 1, 2]);
