@@ -5,7 +5,8 @@ function fibonacciRecursive(n) {
     return n;
   }
 
-  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+  let result = fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+  console.log(result)
 }
 
 function fibonacciIterative(n) {
@@ -16,6 +17,8 @@ function fibonacciIterative(n) {
 
   return arr;
 }
+
+fibonacciRecursive(3)
 
 // fibonacciIterative();
 
@@ -39,5 +42,5 @@ function fibonacciMaster() {
 }
 
 // console.log(fibonacciMaster(10))
-fibonacciMaster(10);
-console.log(`calculation are ${calculations}`);
+// fibonacciMaster(10);
+// console.log(`calculation are ${calculations}`);
